@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../mailtrap"
+		},
+		{
+			"path": "../../Dispora"
+		},
+		{
+			"path": "../../../../../../Applications/MAMP/htdocs/sisaps"
+		},
+		{
+			"path": "../../socialite"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
