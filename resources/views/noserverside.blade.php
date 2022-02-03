@@ -12,9 +12,8 @@
 <body>
     
 <div class="container">
-    
     <h1>PERCOBAAN</h1>
-    <table class="table table-bordered data-table">
+    <table class="table table-bordered data-table" id="tes">
         <thead>
             <tr>
                 <th>No</th>
@@ -24,6 +23,14 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($data as $item)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->email }}</td>
+                    <td><img src="{{ $item->pic }}" style="width:100px;"/></td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
@@ -31,24 +38,8 @@
 </body>
    
 <script type="text/javascript">
-  $(function () {
-    
-    var table = $('.data-table').DataTable({
-        processing: true,
-        serverSide: true,
-        "info":false,
-        "language": {
-                        "processing": "Dalam Proses"
-                    },
-        ajax: "{{ route('users.index') }}",
-        columns: [
-            {data: 'id', name: 'id'},
-            {data: 'name', name: 'name'},
-            {data: 'email', name: 'email'},
-            {data: 'pic', name: 'pic'},
-        ]
-    });
-    
-  });
+  $(document).ready( function () {
+    $('#tes').DataTable();
+} );
 </script>
 </html>

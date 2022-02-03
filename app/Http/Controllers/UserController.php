@@ -18,14 +18,14 @@ class UserController extends Controller
         if ($request->ajax()) {
             $data = User::select('*');
             return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-     
-                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-       
-                            return $btn;
+                    ->addIndexColumn() 
+                    ->addColumn('pic', function($row){
+                        
+                        $pic = '<img src="'.$row->pic.'" style="width:100px;"/>';
+                        
+                        return $pic;
                     })
-                    ->rawColumns(['action'])
+                    ->rawColumns(['pic'])
                     ->make(true);
         }
         

@@ -16,3 +16,9 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/',[UserController::class, 'index'])->name('users.index');
+
+Route::get('/noserverside', function(){
+    return view('noserverside', [
+        'data' => User::all()
+    ]);
+});
